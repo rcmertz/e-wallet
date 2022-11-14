@@ -15,10 +15,12 @@ export default function Login() {
           </div>
           <div className="input-group">
             <div className="text-input">
-              <Input id='email' type='email'>E-mail</Input>
+              <label for ="email">E-mail</label>
+              <Input id='email' type='email'></Input>
             </div>
             <div className="text-input">
-              <Input id='senha' type='password'>Senha</Input>
+            <label for ="senha">Senha</label>
+              <Input id='senha' type='password'></Input>
             </div>
           </div>
           <div className="button">
