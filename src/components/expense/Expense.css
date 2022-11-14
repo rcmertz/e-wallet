@@ -1,0 +1,35 @@
+.expense{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background:#F2EFE6;
+}
+.expenseAction{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background: #D8D5CE;
+}
+.actTitulo{
+    width: 90%;
+}
+.actAction{
+    width: 10%;
+}
+.box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.item{
+    display: flex;
+    width: 50%;
+    height: 70px;
+}
