@@ -7,7 +7,7 @@
     width: 100%;
     background:#F2EFE6;
 }
-.expenseAction{
+.expense-action{
     display: flex;
     flex-direction: row;
     align-items: center;
