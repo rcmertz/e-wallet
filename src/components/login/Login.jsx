@@ -1,7 +1,7 @@
 import Input from "../input/Input";
 import Button from "../button/Button";
 import "./Login.css"
-
+import { Link } from 'react-router-dom'
 export default function Login() {
   return (
 
@@ -26,7 +26,9 @@ export default function Login() {
           </div>
 
           <div className="button" style={{ marginLeft: "35%" }}>
-            <Button id='login-button'>Entrar</Button>
+            <Link to="/expense">
+              <Button id='login-button'>Entrar</Button>
+            </Link>
           </div>
 
         </form>
