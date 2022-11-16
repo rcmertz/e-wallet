@@ -14,9 +14,9 @@
     justify-content: center;
     height: 100%;
     width: 100%;
-    background: #D8D5CE;
+    background: #F2EFE6;
 }
-.actTitulo{
+/* .actTitulo{
     width: 90%;
 }
 .actAction{
@@ -25,11 +25,33 @@
 .box{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: center;z
     align-items: center;
 }
 .item{
     display: flex;
     width: 50%;
     height: 70px;
+} */
+.form{
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    background-color: #D8D5CE;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    padding: 20px 35px;
+}
+
+.form2{
+    display: flex;
+    height: 100px;
+    width: 50px;
+    position: absolute;
+    left: 46%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }

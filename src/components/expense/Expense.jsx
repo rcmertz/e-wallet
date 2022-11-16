@@ -7,7 +7,21 @@ export default function Expense() {
   return (
     <div className="expense">
       <div className="expense-action">
-        <h1>teste</h1>
+        <div className="form">
+          <div className="form2">
+            <p>teste
+              <input type="text" />
+            </p>
+            <p>teste2
+              <input type="text" />
+            </p>
+            <p>
+              teste
+              <input type="text" />
+            </p>
+          </div>
+
+        </div>
       </div>
     </div>
   )
