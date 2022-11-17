@@ -1,12 +1,18 @@
-.expense{
+body{
+    margin: 0;
+    padding: 0;
+    background: #F2EFE6;
+  }
+
+.expense-main{
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    height: 100%;
-    width: 100%;
-    background:#F2EFE6;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
 }
+<<<<<<< HEAD
 .expense-list-card{
     display: flex;
     flex-direction: column;
@@ -77,3 +83,32 @@
     margin-bottom: 5px;
     box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.19);
 }
+=======
+
+.expense-action{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 85vw;
+    height: 80vh;
+    border: 8px;
+    background-color: #D8D5CE;
+    border-radius: 30px;
+    box-shadow: 0px 8px 16px 6px rgba(0, 0, 0, 0.33);
+  }
+
+  .titulo{
+    display: flex;
+    background-color: #C2C0BB;
+    width: 80%;
+    justify-content: space-between;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-bottom: 360px;
+    box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.19);
+    border-radius: 30px;
+  }
+
+ 
+>>>>>>> ee8035be30fc79e5a63f1015a3f20eab9c213eb5

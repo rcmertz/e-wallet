@@ -11,6 +11,7 @@ var expenses = [
 
 export default function Expense() {
   return (
+<<<<<<< HEAD
     <div className="expense">
       <div className="expense-list-card">
         <div className="expense-list-title">
@@ -37,6 +38,37 @@ export default function Expense() {
               ))
             }
           </div>
+=======
+    <div className="expense-main">
+      <div className="expense-action">
+        <div className="titulo">
+          <h1>NOVO DESPESA</h1>
+          <h1>+</h1>
+        </div>
+        <div className="expense-form1">
+        <select name="moeda">
+          <option value="valor1">Real</option>
+          <option value="valor2">Dolar</option>
+          <option value="valor3">Euro</option>
+        </select>
+
+        <Input id='valor' type='number'>Valor</Input>
+        </div>
+
+        <div className="expense-form2">
+        <Input id='descricao' type='text'>Descriçao</Input>
+        </div>
+
+        <div className="expense-form3">
+        <select name="Forma de Pagamento">
+          <option value="valor1">Dinheiro</option>
+          <option value="valor2">PIX</option>
+          <option value="valor3">Cartao</option>
+        </select>
+
+        <Input id='categoria' type='text'>Categoria</Input>
+
+>>>>>>> ee8035be30fc79e5a63f1015a3f20eab9c213eb5
         </div>
       </div>
     </div>
