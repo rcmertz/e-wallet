@@ -26,7 +26,7 @@ export default function Login() {
           </div>
 
           <div className="button" style={{ marginLeft: "35%" }}>
-            <Link to="/expense">
+            <Link to="/wallet">
               <Button id='login-button'>Entrar</Button>
             </Link>
           </div>
