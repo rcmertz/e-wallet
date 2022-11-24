@@ -17,8 +17,8 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 20%;
+    /* justify-content: center; */
+    height: 90px;
     width: 90%;
     background: #D8D5CE;
     margin: 40px;
@@ -26,16 +26,28 @@ body{
     box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.19);
     padding: 20px;
     overflow: hidden;
+    transition: height 0.5s ease-in-out;
 }
 
 .expense-form-title{
     display: flex;
+    position:relative;
     justify-content: space-between;
     background-color: #C2C0BB;
     width: 100%;
     margin-bottom: 1.6%;
     box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.19);
     border-radius: 30px;
+}
+
+.expense-form-title button {
+    background: none;
+    border: none;
+    font-size: 45px;
+    margin-right: 2%;
+    margin-top: 0.6%;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .expense-form-title > h1 {
@@ -101,7 +113,7 @@ body{
 }
 
 .exp-table-body{
-    width: 100%;
+    width: 99.3%;
     height: 400px;
     display: flex;
     flex-direction: column;
@@ -109,6 +121,7 @@ body{
     font-size: 20px;
     overflow-y: auto;
     margin-top: 15px;
+    padding-right: 10px;
 }
 
 .exp-table-row{
@@ -119,22 +132,62 @@ body{
     align-items: center;
     border-radius: 20px;
     font-size: 20px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 10px;
     box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.19);
 }
 
-.form-group-1{
+.form-group{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.form-group-1, .form-group-3{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90%;
+}
+
+.form-group-2{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
-    justify-content: space-around;
+    width: 90%;
 }
 
-.form-group-1 select, input{
-    width: 100%;
-    justify-content: space-around;
+.form-group-1 > label > select{
+    width: 35vw;
+}
+
+.form-group-1 > label > input{
+    width: 35vw;
+}
+
+.form-group-3 > label > select{
+    width: 35vw;
+}
+
+.form-group-3 > label > input{
+    width: 35vw;
+}
+
+.form-group-2 > label > input{
+    width: 75vw;
+}
+
+.form-group-4 {
+    width: 77.5vw;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+select, input{
+    /* justify-content: space-between; */
     border: none;
     border-radius: 10px;
     padding: 15px;
@@ -145,18 +198,34 @@ body{
     box-sizing: border-box;
 }
 
-.form-group-3 select{
-    /* width: 100%; */
-    border: none;
-    justify-content: space-around;
-    border-radius: 10px;
-    padding: 15px;
+/* width */
+.exp-table-body::-webkit-scrollbar {
+    width: 40px;
+  }
+  
+  /* Track */
+.exp-table-body::-webkit-scrollbar-track {
     background: #C2C0BB;
-    font-size: 12pt;
-    box-shadow: 0px 8px 13px -4px rgba(0, 0, 0, 0.24);
-    outline: none;
-    box-sizing: border-box;
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+.exp-table-body::-webkit-scrollbar-thumb {
+    background: #ACAAA4;
+    border-radius: 10px;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.10);
+  }
+  
+  /* Handle on hover */
+.exp-table-body::-webkit-scrollbar-thumb:hover {
+    background: #a8a6a0;
+  }
+
+.expense-pagamento::-ms-expand { 
+    background-position: top 5px right 4px; 
 }
+
+
 
 
  

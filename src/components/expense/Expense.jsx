@@ -44,23 +44,45 @@ export default function Expense() {
   
   }
 
+  var isOpen = false;
+
+  const expandForm = () => {
+      if(isOpen == false){
+        isOpen = true;
+        document.getElementById("expense-form-card").style.height = "540px";
+      }
+      else{
+        isOpen = false;
+        document.getElementById("expense-form-card").style.height = "90px";
+      }
+      
+  }
+
   return (
     <div className="expense">
       <div className="expense-form-card" id="expense-form-card">
         <div className="expense-form-title">
           <h1>NOVA DESPESA</h1>
-          <button>+</button>
+          <button id="button" onClick={expandForm}>+</button>
         </div>
-        <div className="form-group">
+        <form className="form-group">
+         
           <div className="form-group-1">
 
-            <select id="moeda" name="moeda" className="expense-moeda">
-              <option value="real">Real</option>
-              <option value="dolar">Dolar</option>
-              <option value="euro">Euro</option>
-            </select>
+            <label htmlFor="moeda">
+              <p>Moeda</p> 
+              <select id="moeda" name="moeda" className="expense-moeda">
+                <option value="real">Real</option>
+                <option value="dolar">Dolar</option>
+                <option value="euro">Euro</option>
+              </select>
+            </label>
             
-            <Input id='valor' type='number'>Valor</Input>
+            {/* <Input id='valor' type='number'>Valor</Input> */}
+            <label htmlFor="valor">
+              <p>Valor</p>
+              <input type="number" id="valor" name="valor"/>
+            </label>
             
           </div>
 
@@ -71,14 +93,21 @@ export default function Expense() {
 
           <div className="form-group-3">
 
-            <select id="pagamento" name="pagamento" className="expense-pagamento">
-              <option value="dinheiro">Dinheiro</option>
-              <option value="pix">PIX</option>
-              <option value="cartao">Cartao</option>
-            </select>
+            <label htmlFor="pagamento">
+              <p>Forma de Pagamento</p> 
+              <select id="pagamento" name="pagamento" className="expense-pagamento">
+                <option value="dinheiro">Dinheiro</option>
+                <option value="pix">PIX</option>
+                <option value="cartao">Cartao</option>
+              </select>
+            </label>
             
-             <Input id='categoria' type='text'>Categoria</Input>
-            
+            {/* <Input id='categoria' type='text'>Categoria</Input> */}
+            <label htmlFor="categoria">
+              <p>Categoria</p>
+              <input type="text" id="categoria" name="categoria"/>
+            </label>
+
           </div>
 
           <div className="form-group-4">
@@ -86,7 +115,9 @@ export default function Expense() {
               <Button id='login-button' onClick={handleSubmit}>Cadastrar</Button>
             </Link>
           </div>
-    </div>
+
+        </form>
+        
       </div>
 
       <div className="expense-list-card">

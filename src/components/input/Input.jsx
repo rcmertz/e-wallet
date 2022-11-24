@@ -1,7 +1,7 @@
 export default function Input({ id, className, type, minlenght, maxlenght, children }) {
   return (
     <label htmlFor={id}>
-      {children}
+      <p>{children}</p>
       <input
         id={id}
         className={className}
