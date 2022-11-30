@@ -1,9 +1,12 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import Expense from "./components/expense/Expense";
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 
 describe("Login", () => {
-  test("given email, when empty, then show required error message", async () => {
+  test("determinado e-mail, quando vazio, mostra a mensagem de erro necessária", async () => {
     render(<App />);
 
     const email = screen.getByTestId("email");
@@ -15,7 +18,7 @@ describe("Login", () => {
     expect(requiredError).not.toBeNull();
   });
 
-  test("given email, when has value, then hide required error message", async () => {
+  test("determinado e-mail, quando tiver valor, ocultar a mensagem de erro necessária", async () => {
     render(<App />);
 
     const email = screen.getByTestId("email");
@@ -26,14 +29,14 @@ describe("Login", () => {
     expect(requiredError).toBeNull();
   });
 
-  test("given email, when field not changed, then hide required error message", async () => {
+  test("determinado e-mail, quando o campo não for alterado, ocultar a mensagem de erro necessária", async () => {
     render(<App />);
 
     const requiredError = screen.queryByTestId("email-required");
     expect(requiredError).toBeNull();
   });
 
-  test("given email, when invalid, then show invalid error message", async () => {
+  test("determinado e-mail, quando inválido, mostra mensagem de erro inválida", async () => {
     render(<App />);
 
     const email = screen.getByTestId("email");
@@ -44,7 +47,7 @@ describe("Login", () => {
     expect(requiredError).not.toBeNull();
   });
 
-  test("given email, when valid, then hide invalid error message", async () => {
+  test("determinado e-mail, quando válido, oculta a mensagem de erro inválida", async () => {
     render(<App />);
 
     const email = screen.getByTestId("email");
@@ -55,7 +58,7 @@ describe("Login", () => {
     expect(requiredError).toBeNull();
   });
 
-  test("given password, when empty, then show required error message", async () => {
+  test("senha fornecida, quando vazia, mostra a mensagem de erro necessária", async () => {
     render(<App />);
 
     const password = screen.getByTestId("password");
@@ -67,7 +70,7 @@ describe("Login", () => {
     expect(requiredError).not.toBeNull();
   });
 
-  test("given password, when has value, then hide required error message", async () => {
+  test("senha fornecida, quando tiver valor, ocultar a mensagem de erro necessária", async () => {
     render(<App />);
 
     const password = screen.getByTestId("password");
@@ -78,26 +81,7 @@ describe("Login", () => {
     expect(requiredError).toBeNull();
   });
 
-  test("given email, when empty, then disable recover password button", () => {
-    render(<App />);
-
-    const recoverPasswordButton = screen.getByTestId("recover-password-button");
-
-    expect(recoverPasswordButton).toBeDisabled();
-  });
-
-  test("given email, when valid, then enable recover password button", () => {
-    render(<App />);
-
-    const email = screen.getByTestId("email");
-    userEvent.type(email, "valid@email.com");
-
-    const recoverPasswordButton = screen.getByTestId("recover-password-button");
-
-    expect(recoverPasswordButton).not.toBeDisabled();
-  });
-
-  test("given form invalid, then disable login button", () => {
+  test("dado formulário inválido, então desabilite o botão de login", () => {
     render(<App />);
 
     const loginButton = screen.getByTestId("login-button");
@@ -105,7 +89,7 @@ describe("Login", () => {
     expect(loginButton).toBeDisabled();
   });
 
-  test("given form valid, then enable login button", () => {
+  test("dado formulário válido, então habilite o botão de login", () => {
     render(<App />);
 
     const email = screen.getByTestId("email");
@@ -116,5 +100,18 @@ describe("Login", () => {
     const loginButton = screen.getByTestId("login-button");
 
     expect(loginButton).not.toBeDisabled();
+  });
+});
+
+describe("ExpensePage", () => {
+  test("dado input valor preenchido com letras, mostrar mensagem de erro", async () => {
+    render(<BrowserRouter>{<Expense />}</BrowserRouter>);
+
+    const valor = screen.getByTestId("valor");
+
+    await userEvent.type(valor, "dfsfsd");
+
+    const requiredError = screen.queryByTestId("valor-invalid");
+    expect(requiredError).toBeInTheDocument();
   });
 });
