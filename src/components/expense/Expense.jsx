@@ -3,6 +3,9 @@ import * as React from "react";
 import Input from "../input/Input";
 import Button from "../button/Button";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { v4 as uuidv4 } from "uuid";
+import { addExpense } from '../../reducers/expenseSlice.js'
 
 // var expenses = [
 //   { descricao: '1', moeda: 'Dolar', valor: 30, tags: 'Alimento', formaPagamento: 'Pix' },
@@ -21,6 +24,16 @@ import { Link } from "react-router-dom";
 
 export default function Expense() {
   const [expenses, setExpenses] = React.useState([]);
+
+  const dispatch = useDispatch();
+
+  const expense = {
+    descricao: "",
+    moeda: "",
+    valor: 0,
+    pagamento: "",
+    categoria: "",
+  };
 
   const [form, setForm] = React.useState({
     moeda: {
@@ -47,13 +60,7 @@ export default function Expense() {
 
   const handleSubmit = () => {
     debugger;
-    const expense = {
-      descricao: "",
-      moeda: "",
-      valor: 0,
-      pagamento: "",
-      categoria: "",
-    };
+
 
     expense.moeda = document.getElementById("moeda").value;
     expense.valor = document.getElementById("valor").value;
@@ -63,6 +70,14 @@ export default function Expense() {
 
     setExpenses((oldExpenses) => [...oldExpenses, expense]);
   };
+
+  const handleAddExpense = () => {
+    dispatch(addExpense({
+      id: uuidv4(),
+      ...expenses
+    }))
+    setExpenses(expense)
+  }
 
   const isValorValid = (valor) => {
     return /^\d*$/.test(valor);
@@ -158,7 +173,7 @@ export default function Expense() {
 
           <div className="form-group-4">
             <Link to="/wallet">
-              <Button id="login-button" onClick={handleSubmit}>
+              <Button id="login-button" onClick={handleAddExpense}>
                 Cadastrar
               </Button>
             </Link>
