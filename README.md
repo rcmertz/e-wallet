@@ -1,6 +1,6 @@
 <h1> E-wallet </h1>
 
-<p align="center">Sistema de Carteira Digital</p> 
+<p align="center"><strong> Sistema de Carteira Digital </strong> </p> 
 
 <h1 align="center"></h1>
 
@@ -28,7 +28,7 @@
 | MECANISMOS DE ANÁLISE | MECANISMOS DE DESIGN | MECANISMOS DE IMPLEMENTAÇÃO|
 | -------------------- | ------------------- | ---------------------------|
 | Camada de Estado | Gerencia os estados da aplicação  | Redux |
-| Camada de Integração | Consumo de api  | Feach |
+| Camada de Integração | Consumo de api  | Axios |
 
 ### Pré-requisitos
 <p>Antes de começar, você vai precisar ter instalado em sua máquina a seguinte ferramenta:</p>
