@@ -2,11 +2,33 @@
 
 <p align="center">Sistema de Carteira Digital</p> 
 
-<h1 align="center">
+<h1 align="center"></h1>
 
-</h1>
+### 1. Histórico de revisões
 
-<p align="center">Projeto realizado com React</p>
+| DATA | VERSÃO | DESCRIÇÃO|
+| -------------------- | ------------------- | ---------------------------|
+| 17/11/2022 | 1.0 | Pages          |
+| 22/11/2022 | 1.1 | Api            |
+| 23/11/2022 | 1.2 | Tests          |
+| 29/11/2022 | 1.3 | Docker         |
+| 12/12/2022 | 1.4 | Documentation  |
+| 13/12/2022 | 1.5 | Redux          |
+
+### 2. Introdução </p>
+<p>O projeto carteira digital foi realizado tendo como objetivo principal a gestão de suas despesas, de modo a facilitar o dia a dia econômico do usuário. O mesmo abrange cadastro de moedas, conversão e consultas em históricos de despesas ou lucros.
+</p>
+
+
+### 3. Visão Geral 
+![visao-geral-da-arquitetura](https://www.figma.com/file/aqDrRxgD4fSfcwempNG85t/CARTEIRA-DIGITAL?node-id=0%3A1&t=6dgH5pIgrDJ8rYHX-1)
+
+### 4. Mecanismos arquiteturais 
+
+| MECANISMOS DE ANÁLISE | MECANISMOS DE DESIGN | MECANISMOS DE IMPLEMENTAÇÃO|
+| -------------------- | ------------------- | ---------------------------|
+| Camada de Estado | Gerencia os estados da aplicação  | Redux |
+| Camada de Integração | Consumo de api  | Feach |
 
 ### Pré-requisitos
 <p>Antes de começar, você vai precisar ter instalado em sua máquina a seguinte ferramenta:</p>
@@ -24,6 +46,9 @@ $ cd e-wallet
 # Instale as dependências
 $ npm install 
 
+# Instale o redux
+$ npx install 
+
 # Execute a aplicação em modo de desenvolvimento
 $ npm run dev
 
@@ -31,30 +56,3 @@ $ npm run dev
 $ npm run build
 
 # O servidor inciará na porta:3000 - acesse <http://localhost:3000>
-
-1. Histórico de revisões
-
-| DATA | VERSÃO | DESCRIÇÃO|
-| -------------------- | ------------------- | ---------------------------|
-| 16/11/2022 | 1.0 | Componentização |
-| 18/11/2022 | 1.1 | Pages |
-| 23/11/2022 | 1.2 | Routers|
-| 26/11/2022 | 1.3 | Tests |
-| 01/12/2022 | 1.6 | Docker|
-
-2. Introdução
-
-O projeto a seguir representa uma carteira digital, foi desenvolvido por alunos do curso de Engenharia de Software do 4° período através dos conteúdos passados em sala. Consiste em uma aplicação que fornece ao usuário a possibilidade de guardar em registros suas despesas, aonde o mesmo pode especificar a moeda da qual foi feita a despesa, seu valor, uma descrição, uma categoria de despesa e por fim uma forma de pagamento.
-
-3. Visão Geral
-
-
-
-4. Mecanismos arquiteturais
-
-| MECANISMOS DE ANÁLISE | MECANISMOS DE DESIGN | MECANISMOS DE IMPLEMENTAÇÃO|
-| -------------------- | ------------------- | ---------------------------|
-| Camada de Estado | Gerencia os estados da aplicação  | Redux |
-| Camada de Integração | Consumo de api  | Feach |
-
-5. Visão de caso de uso
